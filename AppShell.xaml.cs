@@ -11,6 +11,7 @@ public partial class AppShell : Shell
 
 		Routing.RegisterRoute(nameof(Views.NotePage), typeof(Views.NotePage));
 		Routing.RegisterRoute(nameof(Views.TopPage), typeof(Views.TopPage));
+		Routing.RegisterRoute(nameof(Views.ArticlePage), typeof(Views.ArticlePage));
 	}
 
 	private async void OnBackClicked(object sender, EventArgs e)

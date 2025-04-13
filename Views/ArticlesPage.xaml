@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:News_Radio_app.ViewModels"
+             x:Class="News_Radio_app.Views.ArticlesPage"
+             x:DataType="viewModels:ArticlesViewModel"
+             Title="ArticlePage">
+    
+    <ContentPage.BindingContext>
+        <viewModels:ArticlesViewModel/>
+    </ContentPage.BindingContext>
+
+    <!-- Add an item to the toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                Command="{Binding NewCommand}"
+                IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}"/>
+    </ContentPage.ToolbarItems>
+
+
+    <VerticalStackLayout Padding="10">
+        <Label Text="記事の一覧ページ" FontSize="24" HorizontalOptions="Center"/>
+        
+        
+    <CollectionView x:Name="notesCollection"
+                    ItemsSource="{Binding Articles}"
+                    Margin="20"
+                    SelectionMode="Single"
+                    SelectionChangedCommand="{Binding SelectArticleCommand }"
+                    SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" Margin="5" Stroke="Gray" StrokeThickness="1" >
+                        <Label Text="{Binding Title}" FontSize="18"/>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -6,11 +6,6 @@
     xmlns:views="clr-namespace:News_Radio_app.Views"
     xmlns:local="clr-namespace:News_Radio_app">
 
-    <!-- <Shell.ToolbarItems>
-        <ToolbarItem Text="1個前に戻る(Back)" IconImageSource="Back.png" Clicked="OnBackClicked"/>
-    </Shell.ToolbarItems> -->
-
-
     <!-- TabBarの部分 -->
     <TabBar>
         
@@ -19,10 +14,10 @@
             ContentTemplate="{DataTemplate views:TopPage}"
             Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}"/>
         
-        <!-- <ShellContent
+        <ShellContent
             Title="Article"
-            ContentTemplate="{DataTemplate views:ArticlePage}"
-            Icon="{OnPlatform 'icon_article.png', iOS='icon_article_ios.png', MacCatalyst='icon_article_ios.png'}"/> -->
+            ContentTemplate="{DataTemplate views:ArticlesPage}"
+            Icon="{OnPlatform 'icon_article.png', iOS='icon_article_ios.png', MacCatalyst='icon_article_ios.png'}"/>
 
         <ShellContent
             Title="Notes"

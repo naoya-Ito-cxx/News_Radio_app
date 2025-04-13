@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:News_Radio_app.ViewModels"
+             x:Class="News_Radio_app.Views.ArticlePage"
+             Title="Article">
+
+             <ContentPage.BindingContext>
+                <viewModels:ArticleViewModel/>
+        </ContentPage.BindingContext>
+        <VerticalStackLayout Spacing="10"
+            Margin="5">
+
+
+
+        <Editor x:Name="TitleEditor"
+                Placeholder="Title"
+                Text="{Binding Title}"
+                HeightRequest="100"/>
+
+        <Editor x:Name="UrlEditor"
+                Placeholder="Url"
+                Text="{Binding Url}"
+                HeightRequest="100"/>
+
+        <Editor x:Name="ScriptEditor"
+                Placeholder="Script"
+                Text="{Binding Script}"
+                HeightRequest="100"/>
+
+        <Editor x:Name="GenreEditor"
+                Placeholder="Genre"
+                Text="{Binding Genre}"
+                HeightRequest="100"/>
+
+
+        <Grid ColumnDefinitions="*,*"
+                ColumnSpacing="4">
+            <Button Text="Save"
+                    Command="{Binding SaveCommand}"/>
+
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Command="{Binding DeleteCommand}"/>
+        </Grid>
+        </VerticalStackLayout>
+
+</ContentPage>

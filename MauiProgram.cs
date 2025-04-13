@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using News_Radio_app.ViewModels;
+using News_Radio_app.Views;
 
 namespace News_Radio_app;
 
@@ -14,6 +16,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services.AddSingleton<ArticleViewModel>();
+        builder.Services.AddSingleton<ArticlesPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
